@@ -107,3 +107,11 @@ img {
     height: 100px;
     object-fit: cover;
 }
+
+.chiaro {
+    opacity: 1;
+}
+
+.scuro {
+    opacity: 0.3;
+}

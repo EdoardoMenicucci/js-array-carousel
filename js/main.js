@@ -48,7 +48,7 @@ document.getElementById(`next`).addEventListener("click", function () {
 
 document.getElementById(`prev`).addEventListener("click", function () {
 
-    for (i = 0; i < imgs.length; i++) {
+    for (i = 0; i <= imgs.length; i++) {
 
 
 
@@ -68,7 +68,7 @@ document.getElementById(`prev`).addEventListener("click", function () {
             // SELEZIONO IMG PRECEDENTE A QUELLA CON ACTIVE
             nextImg = i - 1;
             // SE L-IMMAGINE SUCCESSIVA E MINORE O UGUALE A 0 VADO A QUELLA FINALE
-            if (nextImg <= 0) {
+            if (nextImg < 0) {
                 nextImg = imgs.length - 1;
                 // console.log(`next img 4`)
             }
@@ -135,3 +135,57 @@ document.getElementById(`n5`).addEventListener("click", function () {
     }
     imgs[4].classList.add(`active`)
 })
+
+// OPACITA MINIATURA
+
+// CREO UN ARRAY CON TUTTE LE MINIATURE
+let mini = document.getElementsByClassName(`box`); //array delle miniature
+
+
+// ALL APERTURA DELLA PAGINA CONTROLLO QUALE IMG HA L ACTIVE E DI CONSEGUENZA RENDO VISIBILE LA MINIATURA MA NON LE ALTRE
+for (let i = 0; i < mini.length; i++) {
+    mini[i].classList.add('scuro');
+    if (imgs[i].classList.contains(`active`)) {
+        mini[i].classList.remove(`scuro`)
+    }
+}
+
+
+
+// OVUNQUE CLICCO NEL DOCUMENTO VIENE EFFETTUATO UN CONTROLLO SU QUALE IMG E ATTIVA E VIENE TOLTA O AGGIUNTA
+// L'OPACITA ALLA RISPETTIVA MINIATURA
+
+document.addEventListener(`click`, function () {
+
+    if (imgs[0].classList.contains(`active`)) {
+        mini[0].classList.remove(`scuro`)
+    } else {
+        mini[0].classList.add(`scuro`)
+    }
+
+    if (imgs[1].classList.contains(`active`)) {
+        mini[1].classList.remove(`scuro`)
+    } else {
+        mini[1].classList.add(`scuro`)
+    }
+
+    if (imgs[2].classList.contains(`active`)) {
+        mini[2].classList.remove(`scuro`)
+    } else {
+        mini[2].classList.add(`scuro`)
+    }
+
+    if (imgs[3].classList.contains(`active`)) {
+        mini[3].classList.remove(`scuro`)
+    } else {
+        mini[3].classList.add(`scuro`)
+    }
+
+    if (imgs[4].classList.contains(`active`)) {
+        mini[4].classList.remove(`scuro`)
+    } else {
+        mini[4].classList.add(`scuro`)
+    }
+})
+
+
