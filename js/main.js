@@ -156,35 +156,11 @@ for (let i = 0; i < mini.length; i++) {
 // L'OPACITA ALLA RISPETTIVA MINIATURA
 
 document.addEventListener(`click`, function () {
-
-    if (imgs[0].classList.contains(`active`)) {
-        mini[0].classList.remove(`scuro`)
-    } else {
-        mini[0].classList.add(`scuro`)
-    }
-
-    if (imgs[1].classList.contains(`active`)) {
-        mini[1].classList.remove(`scuro`)
-    } else {
-        mini[1].classList.add(`scuro`)
-    }
-
-    if (imgs[2].classList.contains(`active`)) {
-        mini[2].classList.remove(`scuro`)
-    } else {
-        mini[2].classList.add(`scuro`)
-    }
-
-    if (imgs[3].classList.contains(`active`)) {
-        mini[3].classList.remove(`scuro`)
-    } else {
-        mini[3].classList.add(`scuro`)
-    }
-
-    if (imgs[4].classList.contains(`active`)) {
-        mini[4].classList.remove(`scuro`)
-    } else {
-        mini[4].classList.add(`scuro`)
+    for (let i = 0; i < mini.length; i++) {
+        mini[i].classList.add('scuro');
+        if (imgs[i].classList.contains(`active`)) {
+            mini[i].classList.remove(`scuro`)
+        }
     }
 })
 
